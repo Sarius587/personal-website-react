@@ -1,8 +1,7 @@
 import React from 'react';
 
-import './styles/App.css';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
 
 import Home from './components/Home';
 import Skills from './components/Skills';
@@ -11,9 +10,26 @@ import NoMatch from './components/NoMatch';
 
 import Header from './components/Header';
 
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+`;
+
 
 const App = () => (
   <div>
+    <GlobalStyle />
     <Router>
       <Header />
       <Switch>
